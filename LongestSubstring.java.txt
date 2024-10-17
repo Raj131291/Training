@@ -1,0 +1,23 @@
+class LongestSubstring {
+
+  public static int findLongestWordLength( String[] words, String str){
+    int length = 0;
+    for(String word : words)
+    {
+      if(word.contains(str))
+      {
+        length = Math.max(length, word.length());
+      }
+
+    }
+    return length;
+  }
+  public static void main(String[] args) {
+  String[] dict = {"CODGE", "ODG", "LODGES", "SODG", "dodge", "mODJ", "LODGESSSS"};
+        String toSearch = "ODG";
+        
+        int longestLength = findLongestWordLength(dict, toSearch);
+        System.out.println(longestLength);
+
+  }
+}

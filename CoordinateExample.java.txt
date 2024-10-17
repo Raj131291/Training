@@ -1,0 +1,58 @@
+class CoordinateExample {
+  public static String navigate( int stratx, int starty, String dirctions)
+  {
+    int x = stratx;
+    int y = starty;
+    String[] coordinates = dirctions.split(" ");
+
+    for(String commands : coordinates)
+    {
+      int multiplier = 1;
+      String direction = commands;
+
+      if(commands.contains("x"))
+      {
+        String[] parts = commands.split("x");
+        multiplier = Integer.parseInt(parts[0]);
+        direction = parts[1];
+      }
+      switch(direction)
+      {
+      case "U":
+          y += multiplier;
+          break;
+      case "D":
+         y -= multiplier;
+         break;
+      case "L":
+         x -= multiplier;
+         break;
+      case "R":
+         x += multiplier;
+         break;
+      case "UP":
+         y += multiplier;
+         break;
+      case "DOWN":
+         y -= multiplier;
+         break;
+      case "LEFT":
+         x -= multiplier;
+         break;
+      case "RIGHT":
+         x += multiplier;
+         break;
+
+         default:
+         break;
+          
+      }
+    }
+    return "("+ x + "," + y + ")";
+  }
+  public static void main(String[] args) {
+   System.out.println("Final coordinates: " + navigate(0, 0, "UUU")); // Output: (0, 3)
+        System.out.println("Final coordinates: " + navigate(0, 0, "URRDDL")); // Output: (1, -1)
+        System.out.println("Final coordinates: " + navigate(0, 0, "DOWN UP 2xRIGHT DOWN 3xLEFT")); // Output: (-1, -1)
+  }
+}

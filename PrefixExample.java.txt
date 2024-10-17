@@ -1,0 +1,24 @@
+class PrefixExample {
+
+
+ public static List<String> findWordsWithPrefix(String[] input, String prefix)
+  {
+    List<String> prefixWords = new ArrayList<>();
+
+    for (String word : input)
+    {
+      if(word.startsWith(prefix))
+      {
+        prefixWords.add(word);
+      }
+    }
+
+    return prefixWords;
+  }
+  public static void main(String[] args) {
+ String[] arr = {"apple", "applet", "bread", "aper"};
+ String prefixw = "app";
+  System.out.println("output is "+ findWordsWithPrefix(arr, prefixw));
+
+  }
+}

@@ -1,0 +1,46 @@
+public class CustomAtoi {
+    public static void main(String[] args) {
+        String str1 = "123";     // Return 123
+        String str2 = "-123";    // Return -123
+        String str3 = "1a23";    // Return -1 (Invalid entry)
+        
+        System.out.println("Result for '" + str1 + "': " + myAtoi(str1));
+        System.out.println("Result for '" + str2 + "': " + myAtoi(str2));
+        System.out.println("Result for '" + str3 + "': " + myAtoi(str3));
+    }
+
+    public static int myAtoi(String str) {
+        if (str == null || str.isEmpty()) {
+            return -1; // Return -1 for null or empty input
+        }
+
+        int i = 0;
+        int n = str.length();
+        // Step 1: Ignore leading whitespaces
+        while (i < n && str.charAt(i) == ' ') {
+            i++;
+        }
+
+        // Step 2: Check for optional sign
+        int sign = 1;
+        if (i < n && (str.charAt(i) == '-' || str.charAt(i) == '+')) {
+            sign = (str.charAt(i) == '-') ? -1 : 1;
+            i++;
+        }
+
+        // Step 3: Convert digits to integer
+        int result = 0;
+        while (i < n && Character.isDigit(str.charAt(i))) {
+            int digit = str.charAt(i) - '0'; // Convert char to int
+            // Check for overflow
+            if (result > (Integer.MAX_VALUE - digit) / 10) {
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+            result = result * 10 + digit;
+            i++;
+        }
+
+        // Step 4: Return the final result
+        return (i > 0) ? sign * result : -1; 
+    }
+}
