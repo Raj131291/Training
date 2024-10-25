@@ -1,0 +1,37 @@
+Project details and roles and responsiblites:
+============================================
+
+Overview of my recent project, SLS, a banking application developed for four UK banking customers: BAYLB, COBA, DZB, and HVB.
+
+Project Overview:
+=================
+         The SLS application facilitates global users in opening bank accounts in the UK. Its primary purpose is to enable seamless money transfers to and from the UK,
+ as well as facilitate payments for property and product transactions.
+
+This application is currently a legacy system, and our team is tasked with transforming it from a monolithic architecture to a microservices architecture.
+We are utilizing Java 17, with a focus on Java 8 features, and Spring Boot for the development. The project follows Agile methodology for tracking tasks 
+and defects.
+
+Roles and Responsibilities:
+===========================
+               In my role as a Senior Java Developer, I have been actively involved in the following:
+
+Sprint Planning and Review: 
+===========================
+              Participating in bi-weekly sprint planning to prioritize high-impact issues and tasks based on customer requirements. 
+During sprint reviews, I help assess the progress of the previous sprint, including the number of defects resolved and outstanding issues, with the 
+assistance of our Scrum Master.
+
+Defect Discussion and Estimation:
+================================= 
+              Engaging in discussions regarding defects and calculating time estimates for tasks and issues.
+
+Team Leadership: 
+================
+             Over the past six months, I have been managing a team of six members, assigning tasks, and collecting daily status updates on their progress.
+
+Development and Bug Fixing: 
+===========================
+             Actively involved in both developing new features and fixing existing defects.
+
+All tasks and defects are tracked using JIRA, ensuring effective management and transparency throughout the project.
