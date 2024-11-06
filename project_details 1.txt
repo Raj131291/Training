@@ -1,0 +1,191 @@
+Project details and roles and responsiblites:
+============================================
+
+        Overview of my recent project, SLS, a banking application developed for four UK banking customers: BAYLB, COBA, DZB, and HVB.
+
+Project Overview:
+=================
+         The SLS application facilitates global users in opening bank accounts in the UK. Its primary purpose is to enable seamless money transfers to and from the UK.
+
+This application is currently a legacy system, and our team is tasked with transforming it from a monolithic architecture to a microservices architecture.
+We are utilizing Java 17, with a focus on Java 8 features, and Spring Boot for the development. The project follows Agile methodology for tracking tasks 
+and defects.
+
+Roles and Responsibilities:
+===========================
+               In my role as a Senior Java Developer, I have been actively involved in the following:
+
+Sprint Planning and Review: 
+===========================
+              Participating in bi-weekly sprint planning to prioritize high-impact issues and tasks based on customer requirements. 
+During sprint reviews, I help assess the progress of the previous sprint, including the number of defects resolved and outstanding issues, with the 
+assistance of our Scrum Master.
+
+Defect Discussion and Estimation:
+================================= 
+              Engaging in discussions regarding defects and calculating time estimates for tasks and issues.
+
+Team Leadership: 
+================
+             Over the past six months, I have been managing a team of six members, assigning tasks, and collecting daily status updates on their progress.
+
+Development and Bug Fixing: 
+===========================
+             Actively involved in both developing new features and fixing existing defects.
+
+All tasks and defects are tracked using JIRA, ensuring effective management and transparency throughout the project.
+
+
+
+User Story 1: Account Creation for Global Users
+===============================================
+As a global user,
+I want to open a bank account in the UK through the SLS application,
+So that I can access banking services and facilitate money transfers.
+
+Use Case:
+Actor: Global User
+Pre-condition: The user must have valid personal identification documents.
+Trigger: The user initiates the account creation process.
+Main Flow:
+The user fills out personal details and uploads identification documents.
+The system verifies the documents and performs background checks.
+Once validated, the system creates an account and generates login credentials.
+Acceptance Criteria:
+Given a user provides correct personal information and valid documents, when the account is created, then the user should receive a confirmation email with login credentials.
+Given invalid documents are provided, when the system performs validation, then the user should be notified of the error with specific details.
+Given the account creation is successful, when the user logs in, then they should be directed to the user dashboard.
+
+User Story 2: Multi-Factor Authentication (MFA) for Secure Login
+=================================================================
+As a customer,
+I want to use multi-factor authentication when logging into my account,
+So that I can protect my account from unauthorized access.
+
+Use Case:
+Actor: Customer
+Pre-condition: The customer has enabled MFA.
+Trigger: User attempts to log in using their username and password.
+Main Flow:
+User enters username and password.
+System validates credentials and sends a one-time password (OTP) via email/SMS.
+User enters the received OTP to complete the login process.
+The system grants access to the user’s account if OTP is correct.
+Acceptance Criteria:
+Given the user has enabled MFA, when they log in with correct credentials, then they should receive an OTP on their registered device.
+Given an invalid OTP is entered, when the user submits it, then the system should prompt the user to enter the correct OTP.
+Given the correct OTP is provided, when the user submits it, then the system should grant access and navigate to the dashboard.
+
+User Story 3: Transfer Funds Between Accounts
+=============================================
+As a customer,
+I want to transfer money between my accounts,
+So that I can manage my finances more easily.
+
+Use Case:
+Actor: Customer
+Pre-condition: The customer must have multiple accounts and sufficient balance.
+Trigger: User selects the option to transfer funds.
+Main Flow:
+User selects the source and destination accounts.
+User enters the amount to transfer and submits the request.
+System checks for sufficient funds and confirms the transfer.
+Funds are transferred, and both account balances are updated.
+Acceptance Criteria:
+Given I have sufficient funds, when I initiate a transfer, then the system should complete the transaction and display the updated balances.
+Given I do not have enough funds, when I attempt to transfer, then the system should notify me of insufficient funds.
+Given I successfully complete a transfer, when I view the transaction history, then the transfer should appear in the transaction list with correct details.
+
+User Story 4: View Transaction History
+=======================================
+As a customer,
+I want to view my transaction history,
+So that I can track my spending and financial activities.
+
+Use Case:
+Actor: Customer
+Pre-condition: User is logged in and has transaction history.
+Trigger: User selects the "Transaction History" menu.
+Main Flow:
+User navigates to the transaction history section.
+The system fetches and displays the list of transactions.
+User can filter by date range, transaction type, or amount.
+The system displays detailed information on each transaction.
+Acceptance Criteria:
+Given I am logged in, when I access the transaction history, then I should see a complete list of transactions.
+Given I apply a filter for a specific date range, when I submit it, then the system should display only transactions within that range.
+Given I click on a transaction, when I view its details, then I should see the complete transaction details (date, amount, recipient, etc.).
+
+User Story 5: Apply for a Loan
+==============================
+As a customer,
+I want to apply for a loan online,
+So that I can access funds for large purchases or emergencies.
+
+Use Case:
+Actor: Customer
+Pre-condition: The customer must have an active account with the bank.
+Trigger: User selects the loan application option.
+Main Flow:
+User provides loan details (amount, loan type, term).
+The system evaluates eligibility based on the customer’s financial information.
+If approved, the system processes the loan and disburses funds to the customer’s account.
+Acceptance Criteria:
+Given I have an active account, when I apply for a loan, then the system should assess my eligibility and provide feedback.
+Given my loan is approved, when I check my balance, then the loan amount should be credited to my account.
+Given my loan application is rejected, when I view the rejection reason, then the system should explain why the application was declined.
+
+User Story 6: Money Transfer to Other Banks (Cross-Border)
+==========================================================
+As a customer,
+I want to transfer money to an account at another bank in the UK or internationally,
+So that I can send money to anyone, anywhere.
+
+Use Case:
+Actor: Customer
+Pre-condition: The customer must have a linked account for transferring money.
+Trigger: User selects the external transfer option.
+Main Flow:
+User enters recipient’s bank details (account number, sort code, IBAN for international transfers).
+The system validates the details and confirms the transfer request.
+Upon confirmation, the system processes the transfer and updates both accounts.
+Acceptance Criteria:
+Given I enter valid recipient details, when I initiate a transfer, then the system should confirm the successful transfer.
+Given I enter invalid details, when the system performs validation, then it should notify me of the error.
+Given the transfer is successful, when I view my transaction history, then the transaction should be recorded with proper details.
+
+User Story 7: Update Personal Information
+=========================================
+As a customer,
+I want to update my contact information (phone number, email),
+So that I can receive important updates and notifications from the bank.
+
+Use Case:
+Actor: Customer
+Pre-condition: The customer must be logged in and have valid contact information to update.
+Trigger: User accesses the "Update Information" section in their account settings.
+Main Flow:
+User enters the new contact details (phone number, email).
+The system validates the input and updates the user’s account.
+The system confirms the update and notifies the user of the changes.
+Acceptance Criteria:
+Given I enter new contact details, when I submit the changes, then the system should update my account and send a confirmation email.
+Given I enter invalid details (e.g., incorrect email format), when I submit the changes, then the system should notify me of the error.
+
+User Story 8: Admin - Manage User Accounts
+==========================================
+As an admin,
+I want to manage user accounts (e.g., activate, deactivate, lock),
+So that I can ensure proper user access and security.
+
+Use Case:
+Actor: Admin
+Pre-condition: Admin has permission to manage user accounts.
+Trigger: Admin selects a user account from the management console.
+Main Flow:
+Admin can view the user account details and history.
+Admin can deactivate or lock an account if needed.
+Admin can send a notification to the user regarding the status change.
+Acceptance Criteria:
+Given I have selected a user account, when I deactivate it, then the system should lock the account and notify the user.
+Given I lock a user account after failed login attempts, when the user tries to log in, then
